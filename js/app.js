@@ -1,6 +1,6 @@
 // Function to fetch weather data
 async function fetchWeatherData(city) {
-    const apiKey = 'f37c71d93e5ba4f3210877670ff4e8ea'; // Replace with your actual API key
+    const apiKey = 'f37c71d93e5ba4f3210877670ff4e8ea'; // API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     try {
@@ -11,10 +11,11 @@ async function fetchWeatherData(city) {
         const data = await response.json();
         console.log('Weather data:', data);
 
-        // Update the DOM with the fetched weather information
-        document.getElementById('city-name').textContent = `City: ${data.name}`;
-        document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
-        document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description}`;
+        // Update the DOM with weather information
+document.getElementById('city-name').textContent = `City: ${data.name}`;
+document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
+document.getElementById('weather-description').textContent = `Weather: ${data.weather[0].description}`;
+
         
     } catch (error) {
         console.error('Error fetching weather data:', error);
